@@ -1,0 +1,28 @@
+mutation addMusic {
+  addSong(song_title: "Blank space", singer: "Taylor Swift", release_Date: "2014/09/14") {
+    song_title
+  }
+}
+
+mutation update {
+  updatePlaylist(id :"5f1f0c957d52d627d0af616b",song_title:"7 rings" , singer:"Ariana",release_Date:"2020/02/22"){
+    ...fields
+  }
+}
+query getlist{
+  getPlaylist{
+    ...fields
+  }
+}
+query song {
+  song(id:"5f1f0c957d52d627d0af616b"){
+    song_title
+  }
+}
+
+fragment fields on music{
+  id,
+  song_title,
+  singer,
+  release_Date
+}
